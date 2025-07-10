@@ -1,4 +1,4 @@
-#Como usar
+# Como usar
 
 - Edite o dicionário `all`, adicione e remova quantas categorias quiser.
 - Dentro da categoria que você criou, faça as anotações nesse estilo: `"Anotação {N}," (conteúdo) "Ended{N}."`.
