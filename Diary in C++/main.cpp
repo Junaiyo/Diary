@@ -187,12 +187,12 @@ void listNotesSpec() {
   cout << "Digite o nome do arquivo: ";
   string fileName;
   cin >> fileName;
-
-  bool size = checkSize(fileName);
-  if (!size) {return;}
   
 bool fileExist = checkFileExist(fileName);
   if (!fileExist) {return;}
+
+  bool size = checkSize(fileName);
+  if (!size) {return;}
   
   fileIterator(fileName);
 }
@@ -236,4 +236,3 @@ int main() {
   }
   return 0;
 }
-
