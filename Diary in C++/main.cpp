@@ -13,7 +13,8 @@ namespace fs = std::filesystem;
 vector<string> optionsPrimary = {
   "1. Adicionar uma nova anotação",
   "2. Listar todas as anotações",
-  "3. Sair"
+  "3. Deletar um arquivo",
+  "4. Sair"
 };
 
 vector <string> optionsListNotes = {
@@ -217,9 +218,27 @@ void listNotes() {
   cout << "Pasta de anotações não encontrada" << '\n';
 }
 
+void deleteFile() {
+  cout << "Digite o nome do arquivo: ";
+  string fileName;
+  cin >> fileName;
+
+  bool fileExist = checkFileExist(fileName);
+  if (!fileExist) {return;}
+
+  bool remove = fs::remove(path + "/" + fileName + ".txt");
+
+  if (remove) {
+    cout << "Arquivo deletado com sucesso!" << '\n';
+    return;
+  }
+  cout << "Não foi possível deletar o arquivo" << "\n";
+}
+
 vector<vecType> optionsPrimaryFunctions = {
   addNote,
   listNotes,
+  deleteFile,
   exitProgram
 };
 
